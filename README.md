@@ -31,7 +31,6 @@ npm install
 npm run dev
 
 cd backend
-```bash
 npm install
 npm run start:dev
 
