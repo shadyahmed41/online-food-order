@@ -8,10 +8,11 @@ URL: https://food-ordering-web-app-nine.vercel.app/
 - Restaurant management
 - Menu and food item management
 - Cart functionality
+- Payment options (cash on delivery or pay with card)
 - Order creation and real time tracking
-- cash on delivery or pay with card
 - Role-based access control
 - Admin panel
+- Language (English and Arabic)
 - REST API endpoints
 
 ## Tech Stack
