@@ -25,12 +25,12 @@ URL: https://food-ordering-web-app-nine.vercel.app/
 - Prisma
 
 ## Installation
-cd Frontend
 ```bash
+cd frontend
 npm install
 npm run dev
 
-cd Backend
+cd backend
 ```bash
 npm install
 npm run start:dev
