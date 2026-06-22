@@ -1105,9 +1105,28 @@ export default function App() {
             {!trackedOrderId ? (
               // Case A: Show All User Orders
               <div style={{ background: 'var(--bg-card)', padding: '32px', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)', boxShadow: 'var(--shadow-md)' }}>
-                <h2 style={{ fontSize: '26px', fontWeight: 800, marginBottom: '24px', textAlign: 'center' }}>
-                  {language === 'en' ? 'My Orders & Tracking' : 'طلباتي وتتبعها'}
-                </h2>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px', flexWrap: 'wrap', gap: '12px' }}>
+                  <button
+                    onClick={() => setView('home')}
+                    className="btn-animate"
+                    style={{
+                      background: 'transparent',
+                      color: 'var(--primary)',
+                      border: '1px solid var(--primary)',
+                      padding: '6px 14px',
+                      borderRadius: 'var(--radius-sm)',
+                      cursor: 'pointer',
+                      fontWeight: 600,
+                      fontSize: '13px'
+                    }}
+                  >
+                    {language === 'en' ? '← Home' : '← الرئيسية'}
+                  </button>
+                  <h2 style={{ fontSize: '26px', fontWeight: 800 }}>
+                    {language === 'en' ? 'My Orders & Tracking' : 'طلباتي وتتبعها'}
+                  </h2>
+                  <div style={{ width: '80px' }} className="hidden-mobile"></div>
+                </div>
 
                 {userOrders.length === 0 ? (
                   <div style={{ textAlign: 'center', padding: '48px 0', color: 'var(--text-muted)' }}>
@@ -1233,22 +1252,44 @@ export default function App() {
             ) : (
               // Case B: Show Visual Stepper for Tracked Order
               <div style={{ background: 'var(--bg-card)', padding: '32px', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)', boxShadow: 'var(--shadow-md)' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
-                  <button
-                    onClick={() => setTrackedOrder(null, null)}
-                    style={{
-                      background: 'transparent',
-                      color: 'var(--primary)',
-                      border: '1px solid var(--primary)',
-                      padding: '6px 12px',
-                      borderRadius: 'var(--radius-sm)',
-                      cursor: 'pointer',
-                      fontWeight: 600,
-                      fontSize: '13px'
-                    }}
-                  >
-                    {language === 'en' ? '← Back to Orders' : '← العودة للطلبات'}
-                  </button>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px', flexWrap: 'wrap', gap: '12px' }}>
+                  <div style={{ display: 'flex', gap: '8px' }}>
+                    <button
+                      onClick={() => setTrackedOrder(null, null)}
+                      className="btn-animate"
+                      style={{
+                        background: 'transparent',
+                        color: 'var(--primary)',
+                        border: '1px solid var(--primary)',
+                        padding: '6px 12px',
+                        borderRadius: 'var(--radius-sm)',
+                        cursor: 'pointer',
+                        fontWeight: 600,
+                        fontSize: '13px'
+                      }}
+                    >
+                      {language === 'en' ? '← Back' : '← عودة'}
+                    </button>
+                    <button
+                      onClick={() => {
+                        setTrackedOrder(null, null);
+                        setView('home');
+                      }}
+                      className="btn-animate"
+                      style={{
+                        background: 'transparent',
+                        color: 'var(--text-muted)',
+                        border: '1px solid var(--border-color)',
+                        padding: '6px 12px',
+                        borderRadius: 'var(--radius-sm)',
+                        cursor: 'pointer',
+                        fontWeight: 600,
+                        fontSize: '13px'
+                      }}
+                    >
+                      {language === 'en' ? 'Home' : 'الرئيسية'}
+                    </button>
+                  </div>
                   <h2 style={{ fontSize: '22px', fontWeight: 800 }}>
                     {t('orderTracking')}
                   </h2>
