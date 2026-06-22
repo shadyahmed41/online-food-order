@@ -1,13 +1,39 @@
----
-title: food-ordering-backend
-emoji: 🍔
-colorFrom: red
-colorTo: yellow
-sdk: docker
-app_port: 7860
-pinned: false
----
+## Live Demo
 
-# Food Ordering Backend
+URL: https://food-ordering-web-app-nine.vercel.app/
+## Features
 
-This is the NestJS backend for the Online Food Ordering Application, configured for deployment on Hugging Face Spaces.
+- User registration and authentication
+- JWT-based authorization
+- Restaurant management
+- Menu and food item management
+- Cart functionality
+- Order creation and real time tracking
+- cash on delivery or pay with card
+- Role-based access control
+- Admin panel
+- REST API endpoints
+
+## Tech Stack
+
+- NestJS
+- React Vite
+- TypeScript
+- PostgreSQL
+- Docker
+- JWT Authentication
+- Prisma
+
+## Installation
+cd Frontend
+```bash
+npm install
+npm run dev
+
+cd Backend
+```bash
+npm install
+npm run start:dev
+
+
+
